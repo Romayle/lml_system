@@ -8,8 +8,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ExamDialog from "./ExamDialog";
+import { useNavigate } from "react-router-dom";
 
 const ExamCard = () => {
+  const router = useNavigate();
+
+  const redirectToExam = () => {
+    router("/exam");
+  };
+
   return (
     <Card className="w-full">
       <img
@@ -31,9 +38,9 @@ const ExamCard = () => {
         </CardDescription>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Take Exam</Button>
+        {/* <button onClick={redirectToExam}>Take Exam</button> */}
+        <Button variant="outline" onClick={redirectToExam} >Take Exam</Button>
         <ExamDialog />
-        {/* <Button>Read More</Button> */}
       </CardFooter>
     </Card>
   );

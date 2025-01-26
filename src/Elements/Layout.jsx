@@ -11,7 +11,7 @@ const Layout = ({ pageContent, pageName }) => {
       //   "--sidebar-width-mobile": "20rem",
       // }}
     >
-      <div className="flex">
+      <div className="flex flex-1">
         <AppSidebar/>
         <div className="flex-1 px-8">
           <AppHeader pageName={pageName} />

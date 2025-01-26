@@ -16,11 +16,18 @@ import {
 } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
+import { useNavigate } from "react-router-dom";
 
 const ExamDialog = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
+
+  const router = useNavigate();
+
+  const redirectToExam = () => {
+    router("/exam");
+  };
 
   return (
     <Dialog>
@@ -28,7 +35,7 @@ const ExamDialog = () => {
         <Button variant="default">Read More</Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[50vw] sm:min-h-[50vh] bg-white rounded-lg">
+      <DialogContent className="sm:max-w-[50vw] sm:min-h-[50vh] max-h-[70vh] overflow-y-auto bg-white rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl">Exam Title</DialogTitle>
           <DialogDescription>
@@ -42,7 +49,7 @@ const ExamDialog = () => {
             laudantium modi?
           </DialogDescription>
         </DialogHeader>
-        
+
         <Label className="text-xl">Rules & Regulations</Label>
 
         {/* Rule 1 */}
@@ -87,7 +94,10 @@ const ExamDialog = () => {
           </div>
           <CollapsibleContent className="space-y-2">
             <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
-              Description of Rule 2 goes here.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+              fuga libero! At quisquam totam officiis excepturi recusandae
+              asperiores, quam tenetur, cupiditate tempora est vel sit ea
+              consectetur deserunt fugiat quae!
             </div>
           </CollapsibleContent>
         </Collapsible>
@@ -109,13 +119,16 @@ const ExamDialog = () => {
           </div>
           <CollapsibleContent className="space-y-2">
             <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
-              Description of Rule 3 goes here.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+              nobis praesentium, quaerat ipsam quia odit unde fugit labore!
+              Fugit alias quisquam non natus dolorem iste libero quae fuga vero
+              minus.
             </div>
           </CollapsibleContent>
         </Collapsible>
 
         <DialogFooter>
-          <Button type="submit">Take the Exam</Button>
+          <Button type="submit" onClick={redirectToExam} >Take the Exam</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -25,7 +25,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const AppSidebar = React.memo(() => {
   const items = [
-    { title: "Dashboard", url: "#", icon: LayoutDashboard },
+    { title: "Dashboard", url: "/", icon: LayoutDashboard },
     { title: "Courses", url: "courses", icon: MousePointer2 },
     { title: "Exams", url: "exams", icon: BookOpenCheck },
   ];

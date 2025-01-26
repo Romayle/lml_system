@@ -1,6 +1,6 @@
 import { SidebarProvider } from "@/components/ui/sidebar";
-import AppHeader from "./AppHeader";
 import { ExamSidebar } from "./ExamSidebar";
+import ExamHeader from "./ExamHeader";
 
 const ExamLayout = ({ pageContent }) => {
   return (
@@ -10,10 +10,10 @@ const ExamLayout = ({ pageContent }) => {
         "--sidebar-width-mobile": "20rem",
       }}
     >
-      <div className="flex">
+      <div className="flex flex-1">
         <ExamSidebar />
         <div className="flex-1 px-8">
-          {/* <AppHeader /> */}
+          <ExamHeader />
           { pageContent }
         </div>
       </div>
